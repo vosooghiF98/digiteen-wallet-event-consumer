@@ -10,14 +10,19 @@ import java.util.UUID;
 public class ProcessedEvent {
     @Id
     private UUID id;
+
     @Column(name = "event_type", nullable = false, length = 100)
     private String eventType;
+
     @Column(name = "transaction_id", nullable = false, unique = true)
     private UUID transactionId;
+
     @Column(name = "trace_id", nullable = false, length = 100)
     private String traceId;
+
     @Column(nullable = false, columnDefinition = "text")
     private String payload;
+
     @Column(name = "processed_at", nullable = false)
     private Instant processedAt;
 
